@@ -18,7 +18,7 @@ from django.urls import reverse_lazy
 class ReferenceListView(LoginRequiredMixin, ListView):
 
     queryset = Reference.referencelist.all().order_by('-id')
-    print(queryset)
+    #print(queryset)
     ##bikin kluarin query set setengah mati
     context_object_name = 'references'
     paginate_by = 5
