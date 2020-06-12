@@ -1,0 +1,11 @@
+<ul>
+    
+    {% for reference in latest_references %}
+        <li>
+            <a href="{{ references.get_absolute_url }}">
+                {{ reference.title }}
+            </a>
+        </li>
+    {% endfor %}
+        
+</ul>

@@ -1,0 +1,31 @@
+{% load static %}
+{% load reference_tags %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            {%block title%}{% endblock title%}
+        </title>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}">
+    </head>
+    <body>
+        {% include "account/menubar.html" %}
+        <div id = "content">
+            {% block content %}{% endblock content %}
+        </div>
+        <div id="sidebar">
+            <h2>My Reference</h2>
+            <p>This is The Side Bar for References Page</p>
+
+            <p><a href="{% url 'references:reference_create' %}">New Reference</a></p>
+            
+            <p>I Have Created {% total_references_created %} References</p>
+            <p>If the total is not right, it must have been deleted already</p>
+
+            <p>
+                Below is the First Few References' Title {% show_latest_references 5 %}
+            </p>
+        </div>
+    </body>
+</html>

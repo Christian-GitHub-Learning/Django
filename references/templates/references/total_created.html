@@ -1,0 +1,11 @@
+<ul>
+    
+    {% for reference in total_references_created %}
+        <li>
+            <a href="{{ references.get_absolute_url }}">
+                {{ reference.id }}
+            </a>
+        </li>
+    {% endfor %}
+        
+</ul>
